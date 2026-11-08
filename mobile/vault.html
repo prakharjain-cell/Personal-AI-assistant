@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10152e">
+  <title>Document Vault — Personal AI Assistant</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="index.html"><span class="brand-mark">✦</span><span>Personal AI<br>Assistant</span></a>
+      <nav>
+        <a class="nav-link" href="index.html"><span>⌂</span>Home</a>
+        <a class="nav-link active" href="vault.html"><span>▱</span>Vault</a>
+        <a class="nav-link" href="index.html#ask"><span>☏</span>Ask AI</a>
+        <a class="nav-link" href="index.html#integrations"><span>⌘</span>Integrations</a>
+        <a class="nav-link" href="index.html#tasks"><span>☑</span>Tasks</a>
+        <a class="nav-link" href="index.html#settings"><span>⚙</span>Settings</a>
+      </nav>
+      <div class="storage"><span class="storage-icon">☁</span><div><b>Storage</b><small>2.4 GB of 10 GB</small><div class="progress"><i></i></div></div></div>
+      <div class="sidebar-foot"><span class="online-dot"></span> Your vault is private</div>
+    </aside>
+    <main class="main-content vault-main">
+      <header class="topbar"><button class="icon-button menu-button" aria-label="Toggle navigation">☰</button><div class="breadcrumb"><a href="index.html">Workspace</a> <span>/</span> <b>Document Vault</b></div><div class="top-actions"><button class="icon-button" aria-label="Notifications">♧</button><button class="avatar" aria-label="Profile">PJ</button></div></header>
+      <section class="vault-welcome"><div><p class="eyebrow">YOUR PRIVATE LIBRARY</p><h1>Document Vault</h1><p class="muted">Everything important, organized and easy to find.</p></div><button class="vault-upload" id="uploadButton"><span>＋</span> Add document</button></section>
+      <section class="vault-stats"><article><span class="summary-icon">▤</span><div><small>All documents</small><b id="documentCount">24 files</b></div></article><article><span class="summary-icon lilac-bg">▧</span><div><small>Categories</small><b>4 categories</b></div></article><article><span class="summary-icon mint-bg">☁</span><div><small>Storage used</small><b>2.4 GB <span>of 10 GB</span></b></div></article></section>
+      <section class="panel vault-panel">
+        <div class="vault-toolbar"><div><h2>All documents</h2><p>Browse and manage files in your personal vault.</p></div><label class="vault-search"><span>⌕</span><input id="vaultSearch" type="search" placeholder="Search documents..." aria-label="Search documents"></label></div>
+        <div class="category-tabs" role="group" aria-label="Filter documents by category"><button class="category-tab active" data-filter="all">All <span>4</span></button><button class="category-tab" data-filter="identity">Identity</button><button class="category-tab" data-filter="academic">Academic</button><button class="category-tab" data-filter="home">Home</button><button class="category-tab" data-filter="finance">Finance</button></div>
+        <div class="vault-table"><div class="vault-table-head"><span>Document name</span><span>Category</span><span>File size</span><span>Date added</span><span></span></div><div id="vaultList">
+          <article class="vault-row" data-category="identity" data-name="aadhaar card pdf identity"><span class="file-icon pdf">PDF</span><div class="vault-file"><b>Aadhaar Card.pdf</b><small>PDF document · Updated 07 Nov</small></div><span class="category">Identity</span><span class="file-size">1.2 MB</span><span class="file-date">07 Nov 2026</span><button class="more-button" aria-label="More options for Aadhaar Card">···</button></article>
+          <article class="vault-row" data-category="identity" data-name="pan card pdf identity"><span class="file-icon pdf">PDF</span><div class="vault-file"><b>PAN Card.pdf</b><small>PDF document · Updated 05 Nov</small></div><span class="category">Identity</span><span class="file-size">621 KB</span><span class="file-date">05 Nov 2026</span><button class="more-button" aria-label="More options for PAN Card">···</button></article>
+          <article class="vault-row" data-category="academic" data-name="college id jpg academic"><span class="file-icon image-file">▧</span><div class="vault-file"><b>College ID.jpg</b><small>Image · Updated 01 Nov</small></div><span class="category">Academic</span><span class="file-size">486 KB</span><span class="file-date">01 Nov 2026</span><button class="more-button" aria-label="More options for College ID">···</button></article>
+          <article class="vault-row" data-category="home" data-name="rental agreement pdf home"><span class="file-icon pdf">PDF</span><div class="vault-file"><b>Rental Agreement.pdf</b><small>PDF document · Updated 29 Oct</small></div><span class="category">Home</span><span class="file-size">2.1 MB</span><span class="file-date">29 Oct 2026</span><button class="more-button" aria-label="More options for Rental Agreement">···</button></article>
+          <article class="vault-row" data-category="finance" data-name="bank statement pdf finance"><span class="file-icon pdf">PDF</span><div class="vault-file"><b>Bank Statement.pdf</b><small>PDF document · Updated 25 Oct</small></div><span class="category">Finance</span><span class="file-size">830 KB</span><span class="file-date">25 Oct 2026</span><button class="more-button" aria-label="More options for Bank Statement">···</button></article>
+          <article class="empty-state" id="vaultEmpty" hidden>No documents match those filters.</article>
+        </div></div>
+        <div class="vault-footer"><span id="resultsCount">Showing 5 documents</span><span>Files stay on this demo page and are not uploaded.</span></div>
+      </section>
+      <footer class="footer"><span>✦ Personal AI Assistant</span><span>Made to keep your life in order, securely.</span><a class="footer-link" href="index.html#settings">Privacy &amp; settings</a></footer>
+    </main>
+    <input type="file" id="vaultFileInput" hidden multiple accept=".pdf,.png,.jpg,.jpeg,.doc,.docx"><div class="toast" id="vaultToast" role="status" aria-live="polite"></div>
+  </div>
+  <script src="vault.js"></script>
+</body>
+</html>
