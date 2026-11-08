@@ -3,76 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#10152e">
-  <title>Personal AI Assistant — Home</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta http-equiv="refresh" content="0; url=landing.html">
+  <title>Opening Personal AI Vault…</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <div class="app-shell">
-    <aside class="sidebar" aria-label="Main navigation">
-      <a class="brand" href="#home"><span class="brand-mark">✦</span><span>Personal AI<br>Assistant</span></a>
-      <nav>
-        <a class="nav-link active" href="#home"><span>⌂</span>Home</a>
-        <a class="nav-link" href="vault.html"><span>▱</span>Vault</a>
-        <a class="nav-link" href="#ask"><span>☏</span>Ask AI</a>
-        <a class="nav-link" href="#integrations"><span>⌘</span>Integrations</a>
-        <a class="nav-link" href="#tasks"><span>☑</span>Tasks</a>
-        <a class="nav-link" href="#settings"><span>⚙</span>Settings</a>
-      </nav>
-      <div class="storage"><span class="storage-icon">☁</span><div><b>Storage</b><small>2.4 GB of 10 GB</small><div class="progress"><i></i></div></div></div>
-      <div class="sidebar-foot"><span class="online-dot"></span> Your vault is private</div>
-    </aside>
-
-    <main id="home" class="main-content">
-      <header class="topbar"><button class="icon-button menu-button" aria-label="Toggle navigation">☰</button><div class="breadcrumb">Workspace <span>/</span> <b>Home</b></div><div class="top-actions"><button class="icon-button" aria-label="Notifications">♧<i class="notification-dot"></i></button><button class="avatar" aria-label="Profile">PJ</button></div></header>
-
-      <section class="welcome"><div><p class="eyebrow">SUNDAY, 8 NOVEMBER 2026</p><h1>Good morning, Prakhar <span class="wave">✦</span></h1><p class="muted">Your personal documents, answers and tasks — all in one place.</p></div><button class="outline-button" id="overviewButton">✦ <span>Personal workspace</span></button></section>
-
-      <section class="search-panel" id="ask"><span class="search-icon">⌕</span><input id="searchInput" type="search" placeholder="Ask anything about your documents..." aria-label="Search documents or ask a question"><span class="shortcut">↵</span><button class="send-button" id="searchButton" aria-label="Search">➜</button></section>
-      <p class="search-hint">Try <button class="suggestion">“When does my PAN card expire?”</button> or <button class="suggestion">“Find my college ID”</button></p>
-
-      <section class="quick-actions" aria-label="Quick actions">
-        <button class="action-card" data-action="upload"><span class="action-icon purple">⇧</span><b>Add document</b><small>Upload and store files</small></button>
-        <button class="action-card" data-action="ask"><span class="action-icon lilac">✧</span><b>Ask AI</b><small>Get answers from your files</small></button>
-        <button class="action-card" data-action="find"><span class="action-icon blue">⌕</span><b>Find document</b><small>Search across your vault</small></button>
-        <button class="action-card" data-action="task"><span class="action-icon mint">☑</span><b>Create task</b><small>Reminders and to-dos</small></button>
-      </section>
-
-      <section class="summary-grid" aria-label="Workspace summary">
-        <article class="summary-card"><span class="summary-icon">▤</span><div><small>Documents</small><b>24 <span>files in your vault</span></b></div><span class="summary-change">+3 this week</span></article>
-        <article class="summary-card"><span class="summary-icon lilac-bg">✧</span><div><small>AI conversations</small><b>8 <span>this month</span></b></div><span class="summary-change">View history →</span></article>
-        <article class="summary-card"><span class="summary-icon mint-bg">☑</span><div><small>Tasks due soon</small><b>2 <span>next 7 days</span></b></div><span class="summary-change amber-text">1 due today</span></article>
-      </section>
-
-      <section class="content-grid">
-        <section class="panel documents-panel" id="documents"><div class="panel-heading"><div><h2>Recent documents</h2><p>Your latest files, ready when you need them.</p></div><button class="text-button" id="viewAll">View all <span>→</span></button></div>
-          <div class="table-labels"><span>Name</span><span>Category</span><span>Size</span><span>Modified</span><span></span></div>
-          <div class="document-list" id="documentList">
-            <article class="document-row" data-name="Aadhaar Card.pdf Identity Document"><span class="file-icon pdf">PDF</span><div class="file-name"><b>Aadhaar Card.pdf</b><small>Identity document</small></div><span class="category">Identity</span><span class="file-size">1.2 MB</span><span class="file-date">07 Nov 2026</span><button class="more-button" aria-label="More options for Aadhaar Card">···</button></article>
-            <article class="document-row" data-name="PAN Card.pdf Identity Document"><span class="file-icon pdf">PDF</span><div class="file-name"><b>PAN Card.pdf</b><small>Identity document</small></div><span class="category">Identity</span><span class="file-size">621 KB</span><span class="file-date">05 Nov 2026</span><button class="more-button" aria-label="More options for PAN Card">···</button></article>
-            <article class="document-row" data-name="College ID.jpg Academic Document"><span class="file-icon image-file">▧</span><div class="file-name"><b>College ID.jpg</b><small>Academic document</small></div><span class="category">Academic</span><span class="file-size">486 KB</span><span class="file-date">01 Nov 2026</span><button class="more-button" aria-label="More options for College ID">···</button></article>
-            <article class="document-row" data-name="Rental Agreement.pdf Home Document"><span class="file-icon pdf">PDF</span><div class="file-name"><b>Rental Agreement.pdf</b><small>Home &amp; property</small></div><span class="category">Home</span><span class="file-size">2.1 MB</span><span class="file-date">29 Oct 2026</span><button class="more-button" aria-label="More options for Rental Agreement">···</button></article>
-            <article class="empty-state" id="emptyState" hidden>No matching documents. Try another search.</article>
-          </div>
-          <button class="mobile-all text-button" id="mobileViewAll">View all documents →</button>
-        </section>
-        <aside class="right-column">
-          <section class="panel tasks-panel" id="tasks"><div class="panel-heading compact"><div><h2>Coming up</h2><p>Stay on top of your week.</p></div><button class="add-task" id="addTask">＋</button></div>
-            <div class="task-item"><span class="task-indicator today"></span><div><b>Submit assignment</b><small>Today · 5:00 PM</small></div><button class="check-task" aria-label="Mark Submit assignment complete"></button></div>
-            <div class="task-item"><span class="task-indicator tomorrow"></span><div><b>Pay electricity bill</b><small>Tomorrow</small></div><button class="check-task" aria-label="Mark Pay electricity bill complete"></button></div>
-            <div class="task-item"><span class="task-indicator later"></span><div><b>Renew bike insurance</b><small>15 Nov 2026</small></div><button class="check-task" aria-label="Mark Renew bike insurance complete"></button></div>
-            <button class="all-tasks" id="allTasks">Open task list <span>→</span></button>
-          </section>
-          <section class="tip-card"><span class="tip-spark">✧</span><div><b>Your AI, grounded in your files</b><p>Ask a question to get quick answers from documents in your vault.</p><button class="tip-link" id="tipAsk">Ask your first question →</button></div></section>
-          <section class="privacy-note"><span>♢</span><div><b>Private by design</b><small>Your documents stay yours. Your vault is encrypted and only accessible to you.</small></div></section>
-        </aside>
-      </section>
-      <footer class="footer"><span>✦ Personal AI Assistant</span><span>Made to keep your life in order, securely.</span><button id="settings" class="footer-link">Privacy &amp; settings</button></footer>
-    </main>
-    <input type="file" id="fileInput" hidden multiple accept=".pdf,.png,.jpg,.jpeg,.doc,.docx">
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <dialog id="taskDialog"><form method="dialog" class="task-form"><button class="dialog-close" aria-label="Close">×</button><span class="dialog-kicker">STAY ORGANIZED</span><h2>Create a task</h2><p>Add a reminder to your personal workspace.</p><label for="taskTitle">Task name</label><input id="taskTitle" required placeholder="e.g. Call the dentist"><label for="taskDate">Due date</label><input id="taskDate" type="date"><div class="dialog-actions"><button class="cancel-button">Cancel</button><button class="primary-button" id="saveTask" value="save">Create task</button></div></form></dialog>
-  </div>
-  <script src="app.js"></script>
+  <main class="entry-message"><p>Opening your Personal AI Vault…</p><a href="landing.html">Continue to the welcome page</a></main>
+  <script src="index.js"></script>
 </body>
 </html>

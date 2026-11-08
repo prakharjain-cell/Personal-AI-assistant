@@ -1,0 +1,2 @@
+/* Tasks-only list interaction and form refinements. */
+.full-task-row{transition:background .12s}.task-search:focus-within{border-color:#8ea9e8;box-shadow:0 0 0 3px #4a75df16}.full-task-check:focus-visible,.full-task-actions button:focus-visible{outline:2px solid #3d70e477;outline-offset:2px}

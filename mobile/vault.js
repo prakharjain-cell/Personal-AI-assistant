@@ -1,5 +1,5 @@
 const search = document.querySelector('#vaultSearch');
-const rows = [...document.querySelectorAll('.vault-row')];
+let rows = [...document.querySelectorAll('.vault-row')];
 const emptyState = document.querySelector('#vaultEmpty');
 const countLabel = document.querySelector('#resultsCount');
 const toast = document.querySelector('#vaultToast');
@@ -20,7 +20,19 @@ function updateList() {
     if (matches) count++;
   });
   emptyState.hidden = count > 0;
+  emptyState.textContent = rows.length === 0
+    ? 'Your vault is empty. Add a document to get started.'
+    : 'No documents match those filters.';
   countLabel.textContent = `Showing ${count} document${count === 1 ? '' : 's'}`;
+  document.querySelector('#documentCount').textContent = `${rows.length} file${rows.length === 1 ? '' : 's'}`;
+  document.querySelector('#allFilterCount').textContent = rows.length;
+  const categories = new Set(rows.map(row => row.dataset.category));
+  document.querySelector('#categoryCount').textContent = `${categories.size} categor${categories.size === 1 ? 'y' : 'ies'}`;
+  const totalBytes = rows.reduce((sum, row) => sum + Number(row.dataset.size || 0), 0);
+  const used = totalBytes >= 1024 * 1024 ? `${(totalBytes / 1024 / 1024).toFixed(1)} MB` : `${Math.round(totalBytes / 1024)} KB`;
+  document.querySelector('#storageUsed').textContent = used;
+  document.querySelector('#sidebarStorage').textContent = `${used} of 10 GB`;
+  document.querySelector('#sidebarProgress').style.width = `${Math.min(100, totalBytes / (10 * 1024 * 1024 * 1024) * 100)}%`;
 }
 search.addEventListener('input', updateList);
 document.querySelectorAll('.category-tab').forEach(tab => tab.addEventListener('click', () => {
@@ -30,11 +42,11 @@ document.querySelectorAll('.category-tab').forEach(tab => tab.addEventListener('
   updateList();
 }));
 const fileInput = document.querySelector('#vaultFileInput');
-document.querySelector('#uploadButton').addEventListener('click', () => fileInput.click());
-fileInput.addEventListener('change', () => {
-  [...fileInput.files].forEach(file => {
+function addFiles(files) {
+  [...files].forEach(file => {
     const row = document.createElement('article'); row.className = 'vault-row';
     row.dataset.category = 'other'; row.dataset.name = `${file.name} uploaded`;
+    row.dataset.size = file.size;
     const icon = document.createElement('span'); icon.className = `file-icon ${file.name.toLowerCase().endsWith('.pdf') ? 'pdf' : 'image-file'}`; icon.textContent = file.name.toLowerCase().endsWith('.pdf') ? 'PDF' : '▧';
     const info = document.createElement('div'); info.className = 'vault-file';
     const title = document.createElement('b'); title.textContent = file.name;
@@ -45,7 +57,17 @@ fileInput.addEventListener('change', () => {
     const more = document.createElement('button'); more.className = 'more-button'; more.textContent = '···'; more.setAttribute('aria-label', `More options for ${file.name}`);
     row.append(icon, info, category, size, date, more); document.querySelector('#vaultList').prepend(row); rows.unshift(row);
   });
-  if (fileInput.files.length) showToast('Files added to this preview. They are not uploaded or saved.');
+  if (files.length) showToast(`${files.length} file${files.length === 1 ? '' : 's'} added to this preview. They are not uploaded or saved.`);
+  updateList();
+}
+document.querySelectorAll('#uploadButton,#bottomUploadButton').forEach(button => button.addEventListener('click', () => fileInput.click()));
+fileInput.addEventListener('change', () => {
+  addFiles(fileInput.files);
   fileInput.value = ''; updateList();
 });
+const dropzone = document.querySelector('#vaultDropzone');
+dropzone.addEventListener('dragover', event => { event.preventDefault(); dropzone.classList.add('dragging'); });
+dropzone.addEventListener('dragleave', event => { if (!dropzone.contains(event.relatedTarget)) dropzone.classList.remove('dragging'); });
+dropzone.addEventListener('drop', event => { event.preventDefault(); dropzone.classList.remove('dragging'); addFiles(event.dataTransfer.files); });
 document.querySelector('.menu-button').addEventListener('click', () => document.querySelector('.sidebar').classList.toggle('open'));
+updateList();

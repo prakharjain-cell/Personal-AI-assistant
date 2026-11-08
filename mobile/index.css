@@ -1,0 +1,2 @@
+/* Fallback styling for the tiny entry page while it redirects to landing.html. */
+body{min-height:100vh;display:grid;place-items:center;margin:0;background:#f3f6fb;color:#263653;font:14px 'DM Sans',sans-serif}.entry-message{text-align:center;padding:24px}.entry-message a{color:#315dcc}

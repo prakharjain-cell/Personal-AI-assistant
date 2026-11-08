@@ -1,0 +1,2 @@
+/* Integrations-only reading sizes and service-card focus states. */
+.integration-notice p,.integration-card>p{font-size:13px;line-height:1.65}.integration-section-heading h2{font-size:19px}.integration-card h3{font-size:17px}.integration-permissions b,.integration-setup{font-size:12px}.integration-setup:focus-visible{outline:2px solid #3d70e477;outline-offset:2px}

@@ -1,0 +1,2 @@
+/* Settings-only profile, preference and privacy controls. */
+.settings-nav a:focus-visible,.settings-save:focus-visible,.danger-button:focus-visible{outline:2px solid #3d70e477;outline-offset:2px}.settings-card{scroll-margin-top:18px}.preference-row{user-select:none}

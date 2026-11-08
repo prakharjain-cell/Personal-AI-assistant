@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10152e">
+  <title>Personal AI Assistant — Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="modern.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="dashboard.html#home"><span class="brand-mark">✦</span><span>Personal AI<br>Assistant</span></a>
+      <nav>
+        <a class="nav-link active" href="dashboard.html#home"><span>⌂</span>Home</a>
+        <a class="nav-link" href="vault.html"><span>▱</span>Vault</a>
+        <a class="nav-link" href="ask.html"><span>☏</span>Ask AI</a>
+        <a class="nav-link" href="integrations.html"><span>⌘</span>Integrations</a>
+        <a class="nav-link" href="tasks.html"><span>☑</span>Tasks</a>
+        <a class="nav-link" href="settings.html"><span>⚙</span>Settings</a>
+      </nav>
+      <div class="storage"><span class="storage-icon">☁</span><div><b>Storage</b><small>0 MB of 10 GB</small><div class="progress"><i style="width:0%"></i></div></div></div>
+      <div class="sidebar-foot"><span class="online-dot"></span> Your vault is private</div>
+    </aside>
+
+    <main id="home" class="main-content">
+      <header class="topbar"><button class="icon-button menu-button" aria-label="Toggle navigation">☰</button><div class="breadcrumb">Workspace <span>/</span> <b>Home</b></div><div class="top-actions"><button class="icon-button" aria-label="Notifications">♧<i class="notification-dot"></i></button><a class="avatar" href="settings.html" aria-label="Profile and settings">PJ</a></div></header>
+
+      <section class="welcome"><div><p class="eyebrow">SUNDAY, 8 NOVEMBER 2026</p><h1>Good morning, Prakhar <span class="wave">✦</span></h1><p class="muted">Your personal documents, answers and tasks — all in one place.</p></div><button class="outline-button" id="overviewButton">✦ <span>Personal workspace</span></button></section>
+
+      <section class="quick-actions" aria-label="Quick actions">
+        <button class="action-card" data-action="upload"><span class="action-icon purple">⇧</span><b>Add document</b><small>Upload and store files</small></button>
+        <button class="action-card" data-action="ask"><span class="action-icon lilac">✧</span><b>Ask AI</b><small>Get answers from your files</small></button>
+        <button class="action-card" data-action="find"><span class="action-icon blue">▤</span><b>Find document</b><small>Search across your vault</small></button>
+        <button class="action-card" data-action="task"><span class="action-icon mint">☑</span><b>Create task</b><small>Reminders and to-dos</small></button>
+      </section>
+
+      <section class="summary-grid" aria-label="Workspace summary">
+        <article class="summary-card"><span class="summary-icon">▤</span><div><small>Documents</small><b>0 <span>files in your vault</span></b></div><span class="summary-change">Ready for your files</span></article>
+        <article class="summary-card"><span class="summary-icon lilac-bg">✧</span><div><small>AI conversations</small><b>0 <span>this month</span></b></div><span class="summary-change">Start a chat</span></article>
+        <article class="summary-card"><span class="summary-icon mint-bg">☑</span><div><small>Tasks due soon</small><b>0 <span>next 7 days</span></b></div><span class="summary-change">Nothing due</span></article>
+      </section>
+
+      <section class="content-grid">
+        <section class="panel documents-panel" id="documents"><div class="panel-heading"><div><h2>Recent documents</h2><p>Your latest files, ready when you need them.</p></div><button class="text-button" id="viewAll">View all <span>→</span></button></div>
+          <div class="table-labels"><span>Name</span><span>Category</span><span>Size</span><span>Modified</span><span></span></div>
+          <div class="document-list" id="documentList">
+            <article class="empty-state home-empty-docs" id="emptyState"><span>▤</span><b>No documents yet</b><small>Add your first file to start building your vault.</small><button class="empty-upload" id="emptyUpload">＋ Add document</button></article>
+          </div>
+          <button class="mobile-all text-button" id="mobileViewAll">View all documents →</button>
+        </section>
+        <aside class="right-column">
+          <section class="panel tasks-panel" id="tasks"><div class="panel-heading compact"><div><h2>Coming up</h2><p>Stay on top of your week.</p></div><button class="add-task" id="addTask">＋</button></div>
+            <p class="home-empty-tasks">Your tasks will appear here when you add them.</p>
+            <a class="all-tasks" id="allTasks" href="tasks.html">Open task list <span>→</span></a>
+          </section>
+          <section class="tip-card"><span class="tip-spark">✧</span><div><b>Your AI, grounded in your files</b><p>Ask a question to get quick answers from documents in your vault.</p><button class="tip-link" id="tipAsk">Ask your first question →</button></div></section>
+          <section class="privacy-note"><span>♢</span><div><b>Private by design</b><small>Your documents stay yours. Your vault is encrypted and only accessible to you.</small></div></section>
+        </aside>
+      </section>
+      <footer class="footer"><span>✦ Personal AI Assistant</span><span>Made to keep your life in order, securely.</span><a id="settings" class="footer-link" href="settings.html">Privacy &amp; settings</a></footer>
+    </main>
+    <input type="file" id="fileInput" hidden multiple accept=".pdf,.png,.jpg,.jpeg,.doc,.docx">
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div>
+  <script src="dashboard.js"></script>
+</body>
+</html>

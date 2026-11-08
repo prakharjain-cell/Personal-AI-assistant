@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10152e">
+  <title>Settings — Personal AI Assistant</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="modern.css">
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="dashboard.html"><span class="brand-mark">✦</span><span>Personal AI<br>Assistant</span></a>
+      <nav>
+        <a class="nav-link" href="dashboard.html"><span>⌂</span>Home</a>
+        <a class="nav-link" href="vault.html"><span>▱</span>Vault</a>
+        <a class="nav-link" href="ask.html"><span>☏</span>Ask AI</a>
+        <a class="nav-link" href="integrations.html"><span>⌘</span>Integrations</a>
+        <a class="nav-link" href="tasks.html"><span>☑</span>Tasks</a>
+        <a class="nav-link active" href="settings.html"><span>⚙</span>Settings</a>
+      </nav>
+      <div class="storage"><span class="storage-icon">☁</span><div><b>Storage</b><small>0 MB of 10 GB</small><div class="progress"><i style="width:0%"></i></div></div></div>
+      <div class="sidebar-foot"><span class="online-dot"></span> Preferences on this device</div>
+    </aside>
+    <main class="main-content settings-main">
+      <header class="topbar"><button class="icon-button menu-button" aria-label="Toggle navigation">☰</button><div class="breadcrumb"><a href="dashboard.html">Workspace</a> <span>/</span> <b>Settings</b></div><div class="top-actions"><a class="avatar" href="settings.html" aria-label="Profile and settings">PJ</a></div></header>
+      <section class="settings-welcome"><p class="eyebrow">MAKE IT YOURS</p><h1>Settings</h1><p class="muted">Manage your profile, preferences and local app data.</p></section>
+      <div class="settings-layout">
+        <nav class="settings-nav" aria-label="Settings sections"><a href="#account">Account</a><a href="#preferences">Preferences</a><a href="#privacy">Privacy &amp; data</a></nav>
+        <div class="settings-content">
+          <section class="panel settings-card" id="account"><div class="settings-card-heading"><div><h2>Account profile</h2><p>These details are saved only in this browser preview.</p></div><span class="settings-card-icon">♙</span></div>
+            <form id="profileForm" class="profile-form"><label for="profileName">Display name</label><input id="profileName" maxlength="60" placeholder="Your name"><label for="profileEmail">Email address</label><input id="profileEmail" type="email" maxlength="120" placeholder="you@example.com"><div class="settings-form-footer"><span id="profileStatus" role="status">No profile saved yet.</span><button class="settings-save" type="submit">Save profile</button></div></form>
+          </section>
+          <section class="panel settings-card" id="preferences"><div class="settings-card-heading"><div><h2>Preferences</h2><p>Choose which reminders you would like to see.</p></div><span class="settings-card-icon teal-icon">⚙</span></div>
+            <label class="preference-row"><span><b>Task reminders</b><small>Show reminders for tasks that are due soon.</small></span><input type="checkbox" data-preference="taskReminders"><i></i></label>
+            <label class="preference-row"><span><b>Product updates</b><small>Show notes when new prototype features are added.</small></span><input type="checkbox" data-preference="productUpdates"><i></i></label>
+            <p class="settings-footnote">Preferences are stored in this browser. Notifications are visual settings only; no alerts are sent.</p>
+          </section>
+          <section class="panel settings-card" id="privacy"><div class="settings-card-heading"><div><h2>Privacy &amp; local data</h2><p>Understand what this prototype stores on your device.</p></div><span class="settings-card-icon teal-icon">♢</span></div>
+            <div class="data-info"><b>Saved on this device</b><p>Task list and profile preferences use browser storage. Documents are not uploaded or saved, and chat messages are not stored.</p></div>
+            <div class="settings-action-row"><div><b>Clear saved tasks</b><small>Delete tasks saved by this prototype from this browser.</small></div><button class="danger-button" id="clearTasks">Clear tasks</button></div>
+            <div class="settings-action-row"><div><b>Sign-in prototype</b><small>Authentication is not connected. Open the sign-in screen preview.</small></div><a class="settings-secondary" href="signin.html">Open sign-in</a></div>
+          </section>
+          <div class="settings-notice" id="settingsNotice" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+      <footer class="footer"><span>✦ Personal AI Assistant</span><span>Preferences are local to this browser.</span><a class="footer-link" href="signin.html">Sign in preview</a></footer>
+    </main>
+  </div>
+  <script src="settings.js"></script>
+</body>
+</html>
