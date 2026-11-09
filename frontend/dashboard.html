@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="auth-guard.js"></script>
+  <meta name="theme-color" content="#10152e">
+  <title>Anvaya — Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="modern.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="dashboard-documents.css">
+  <link rel="stylesheet" href="sidebar.css">
+</head>
+<body class="dashboard-body">
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="dashboard.html#home"><span class="brand-mark"><img class="brand-logo" src="assets/brain-logo.png" alt=""></span><span>Anvaya</span></a>
+      <nav>
+        <a class="nav-link active" href="dashboard.html#home"><span>⌂</span>Home</a>
+        <a class="nav-link" href="vault.html"><span>▱</span>Vault</a>
+        <a class="nav-link" href="ask.html"><span>☏</span>Ask AI</a>
+        <a class="nav-link" href="integrations.html"><span>⌘</span>Integrations</a>
+        <a class="nav-link" href="tasks.html"><span>☑</span>Tasks</a>
+        <a class="nav-link" href="settings.html"><span>⚙</span>Settings</a>
+      </nav>
+      <div class="storage"><span class="storage-icon">☁</span><div><b>Storage</b><small>0 MB of 10 GB</small><div class="progress"><i style="width:0%"></i></div></div></div>
+      <div class="sidebar-foot"><span class="online-dot"></span> Document details stay in this browser</div>
+    </aside>
+
+    <main id="home" class="main-content">
+      <header class="topbar"><button class="icon-button menu-button" aria-label="Collapse sidebar" aria-expanded="true" title="Collapse or open sidebar">☰</button><div class="breadcrumb">Workspace <span>/</span> <b>Home</b></div><div class="top-actions"><button class="icon-button" aria-label="Notifications">♧<i class="notification-dot"></i></button><a class="avatar" href="settings.html" aria-label="Profile and settings">PJ</a></div></header>
+
+      <section class="welcome"><div><p class="eyebrow" id="todayLabel"></p><h1>Good morning, Prakhar <span class="wave">✦</span></h1><p class="muted">Add a document or search for one in your recent files.</p></div></section>
+
+      <section class="home-document-tools" aria-label="Document tools">
+        <button class="home-add-document" id="addDocument" type="button"><span class="home-add-icon" aria-hidden="true">＋</span><span><b>Add document</b><small>Select files for this preview</small></span></button>
+        <label class="home-document-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.7"></circle><path d="m16 16 4.2 4.2"></path></svg><input id="documentSearch" type="search" placeholder="Search recent documents…" autocomplete="off" aria-label="Search recent documents"></label>
+      </section>
+
+      <section class="panel favorites-panel" id="favorites"><div class="panel-heading"><div><h2>Favorites</h2><p>Your most important documents, close at hand.</p></div><a class="text-button" href="vault.html">View all <span>→</span></a></div>
+        <div class="favorites-list" id="favoritesList"><p class="favorites-empty" id="favoritesEmpty">Your favorites will appear here. Use a document’s more menu to mark it important.</p></div>
+      </section>
+
+      <section class="panel documents-panel" id="documents"><div class="panel-heading"><div><h2>Recent documents</h2><p id="recentSummary">Your five latest files, ready when you need them.</p></div><a class="text-button" href="vault.html">More documents <span>→</span></a></div>
+          <div class="table-labels"><span>Name</span><span>Category</span><span>Size</span><span>Modified</span><span></span></div>
+          <div class="document-list" id="documentList">
+            <article class="empty-state home-empty-docs" id="emptyState"><span>▤</span><b>No documents yet</b><small>Add your first file to start building your vault.</small><button class="empty-upload" id="emptyUpload">＋ Add document</button></article>
+            <p class="home-search-empty" id="searchEmpty" hidden>No recent documents match that search.</p>
+          </div>
+          <a class="mobile-all text-button" href="vault.html">More documents →</a>
+      </section>
+      <footer class="footer"><span class="footer-brand"><img class="brand-logo" src="assets/brain-logo.png" alt="">Anvaya</span><span>Made to keep your life in order.</span><a id="settings" class="footer-link" href="settings.html">Privacy &amp; settings</a></footer>
+    </main>
+    <input type="file" id="fileInput" hidden multiple accept=".pdf,.png,.jpg,.jpeg,.doc,.docx">
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div>
+  <script src="documents-store.js"></script>
+  <script src="dropdown-motion.js"></script>
+  <script src="dashboard-documents.js"></script>
+  <script src="dashboard.js"></script>
+  <script src="sidebar-control.js"></script>
+</body>
+</html>

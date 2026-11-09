@@ -1,0 +1,31 @@
+/* Sidebar controls and compact desktop mode. */
+.menu-button{display:inline-grid;place-items:center;flex:none;width:38px;height:38px;margin-right:14px;border:1px solid #dfe6f1;border-radius:10px;background:#fff;color:#52617c;font-size:18px;transition:background .16s,color .16s}
+.menu-button:hover{background:#edf2ff;color:#315dcc}
+.topbar .breadcrumb{margin-right:auto}
+.app-shell{transition:grid-template-columns .2s ease}
+.sidebar{transition:width .2s ease,padding .2s ease,transform .2s ease}
+.brand-mark{overflow:hidden;background:#fff}
+.brand-logo{display:block;width:100%;height:100%;object-fit:cover;border-radius:inherit}
+.sidebar-collapsed{grid-template-columns:82px minmax(0,1fr)}
+.sidebar-collapsed .sidebar{align-items:center;padding-left:12px;padding-right:12px}
+.sidebar-collapsed .brand{padding:0 0 30px}
+.sidebar-collapsed .brand>span:last-child{display:none}
+.sidebar-collapsed .sidebar nav{width:100%}
+.sidebar-collapsed .nav-link{justify-content:center;gap:0;padding:12px 8px;font-size:0}
+.sidebar-collapsed .nav-link>span{font-size:20px}
+.sidebar-collapsed .storage{justify-content:center;padding:11px;width:100%}
+.sidebar-collapsed .storage>div,.sidebar-collapsed .sidebar-foot{display:none}
+.sidebar-collapsed .main-content{max-width:1400px}
+@media(max-width:1120px) and (min-width:761px){.sidebar-collapsed{grid-template-columns:76px minmax(0,1fr)}}
+@media(max-width:760px){.menu-button{display:inline-grid}.topbar .breadcrumb{margin-left:10px}.app-shell.sidebar-collapsed{display:block}.sidebar-collapsed .sidebar{align-items:stretch;padding:27px 18px 20px}.sidebar-collapsed .brand{padding:0 10px 30px}.sidebar-collapsed .brand>span:last-child{display:inline}.sidebar-collapsed .nav-link{justify-content:flex-start;gap:13px;padding:11px 13px;font-size:14px}.sidebar-collapsed .storage{justify-content:flex-start;padding:12px;width:auto}.sidebar-collapsed .storage>div,.sidebar-collapsed .sidebar-foot{display:flex}.sidebar-collapsed .storage>div{display:block}}
+@media(prefers-reduced-motion:reduce){.app-shell,.sidebar,.menu-button{transition:none}}
+.brand-mark{background:transparent!important;box-shadow:none!important}
+.brand-logo{mix-blend-mode:multiply}
+.footer-brand{display:inline-flex;align-items:center;gap:6px}.footer-brand .brand-logo{width:17px;height:17px;flex:none;mix-blend-mode:multiply}
+.menu-button{transition:background .16s ease,color .16s ease,transform .18s cubic-bezier(.2,.8,.2,1),box-shadow .18s ease}
+.menu-button:hover{transform:scale(1.06);box-shadow:0 4px 12px #315dcc20}
+.menu-button:active{transform:scale(.96)}
+.sidebar nav .nav-link{transform-origin:left center;transition:background .16s ease,color .16s ease,box-shadow .16s ease,transform .18s cubic-bezier(.2,.8,.2,1)}
+.sidebar nav .nav-link:hover{transform:translateX(2px) scale(1.015)}
+.sidebar nav .nav-link:active{transform:translateX(1px) scale(.99)}
+@media(prefers-reduced-motion:reduce){.sidebar nav .nav-link,.menu-button{transition:none}.sidebar nav .nav-link:hover,.sidebar nav .nav-link:active,.menu-button:hover,.menu-button:active{transform:none}}

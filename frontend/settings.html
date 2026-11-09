@@ -3,16 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="auth-guard.js"></script>
   <meta name="theme-color" content="#10152e">
-  <title>Settings — Personal AI Assistant</title>
+  <title>Settings — Anvaya</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="modern.css">
   <link rel="stylesheet" href="settings.css">
+  <link rel="stylesheet" href="sidebar.css">
 </head>
 <body>
   <div class="app-shell">
     <aside class="sidebar" aria-label="Main navigation">
-      <a class="brand" href="dashboard.html"><span class="brand-mark">✦</span><span>Personal AI<br>Assistant</span></a>
+      <a class="brand" href="dashboard.html"><span class="brand-mark"><img class="brand-logo" src="assets/brain-logo.png" alt=""></span><span>Anvaya</span></a>
       <nav>
         <a class="nav-link" href="dashboard.html"><span>⌂</span>Home</a>
         <a class="nav-link" href="vault.html"><span>▱</span>Vault</a>
@@ -25,7 +27,7 @@
       <div class="sidebar-foot"><span class="online-dot"></span> Preferences on this device</div>
     </aside>
     <main class="main-content settings-main">
-      <header class="topbar"><button class="icon-button menu-button" aria-label="Toggle navigation">☰</button><div class="breadcrumb"><a href="dashboard.html">Workspace</a> <span>/</span> <b>Settings</b></div><div class="top-actions"><a class="avatar" href="settings.html" aria-label="Profile and settings">PJ</a></div></header>
+      <header class="topbar"><button class="icon-button menu-button" aria-label="Collapse sidebar" aria-expanded="true" title="Collapse or open sidebar">☰</button><div class="breadcrumb"><a href="dashboard.html">Workspace</a> <span>/</span> <b>Settings</b></div><div class="top-actions"><a class="avatar" href="settings.html" aria-label="Profile and settings">PJ</a></div></header>
       <section class="settings-welcome"><p class="eyebrow">MAKE IT YOURS</p><h1>Settings</h1><p class="muted">Manage your profile, preferences and local app data.</p></section>
       <div class="settings-layout">
         <nav class="settings-nav" aria-label="Settings sections"><a href="#account">Account</a><a href="#preferences">Preferences</a><a href="#privacy">Privacy &amp; data</a></nav>
@@ -39,16 +41,17 @@
             <p class="settings-footnote">Preferences are stored in this browser. Notifications are visual settings only; no alerts are sent.</p>
           </section>
           <section class="panel settings-card" id="privacy"><div class="settings-card-heading"><div><h2>Privacy &amp; local data</h2><p>Understand what this prototype stores on your device.</p></div><span class="settings-card-icon teal-icon">♢</span></div>
-            <div class="data-info"><b>Saved on this device</b><p>Task list and profile preferences use browser storage. Documents are not uploaded or saved, and chat messages are not stored.</p></div>
+            <div class="data-info"><b>Saved on this device</b><p>Task list, profile preferences, and document names, sizes, dates, and Favorites use browser storage. Document contents are not uploaded or saved, and chat messages are not stored.</p></div>
             <div class="settings-action-row"><div><b>Clear saved tasks</b><small>Delete tasks saved by this prototype from this browser.</small></div><button class="danger-button" id="clearTasks">Clear tasks</button></div>
-            <div class="settings-action-row"><div><b>Sign-in prototype</b><small>Authentication is not connected. Open the sign-in screen preview.</small></div><a class="settings-secondary" href="signin.html">Open sign-in</a></div>
+            <div class="settings-action-row"><div><b>Demo session</b><small>This preview session only controls navigation; it is not a real account login.</small></div><button class="settings-secondary" id="endDemoSession" type="button">Log out</button></div>
           </section>
           <div class="settings-notice" id="settingsNotice" role="status" aria-live="polite"></div>
         </div>
       </div>
-      <footer class="footer"><span>✦ Personal AI Assistant</span><span>Preferences are local to this browser.</span><a class="footer-link" href="signin.html">Sign in preview</a></footer>
+      <footer class="footer"><span class="footer-brand"><img class="brand-logo" src="assets/brain-logo.png" alt="">Anvaya</span><span>Preferences are local to this browser.</span><a class="footer-link" href="signin.html">Sign in preview</a></footer>
     </main>
   </div>
   <script src="settings.js"></script>
+  <script src="sidebar-control.js"></script>
 </body>
 </html>

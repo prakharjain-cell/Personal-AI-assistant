@@ -1,2 +1,0 @@
-/* Login/sign-up page only. Shared form colors and layout come from styles.css. */
-.auth-tabs{margin-top:2px}.auth-tab:focus-visible,.auth-submit:focus-visible{outline:3px solid #3c69dc55;outline-offset:2px}.auth-card form>input,.password-field{transition:border-color .15s,box-shadow .15s}.auth-message-status{min-height:34px}

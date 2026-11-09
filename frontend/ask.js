@@ -18,7 +18,7 @@ function addUserMessage(text) {
 }
 function addPreviewReply() {
   const message = document.createElement('article'); message.className = 'message assistant-message';
-  message.innerHTML = '<div class="message-meta"><span class="mini-assistant">✦</span> Personal AI <time>preview</time></div><div class="answer-card"><p>This chat screen is a front-end preview. It is not connected to an AI service, so I can’t read or summarize your documents yet.</p><div class="source-label">NEXT STEP <span>Backend needed</span></div><a class="source-card" href="vault.html"><span class="file-icon pdf">PDF</span><span><b>Connect a document-aware AI</b><small>Then answers can cite files from your vault.</small></span><span class="source-arrow">↗</span></a><div class="answer-note">No document contents were sent or analyzed.</div></div>';
+  message.innerHTML = '<div class="message-meta"><span class="mini-assistant"><img class="brand-logo" src="assets/brain-logo.png" alt=""></span> Anvaya <time>preview</time></div><div class="answer-card"><p>This chat screen is a front-end preview. It is not connected to an AI service, so I can’t read or summarize your documents yet.</p><div class="source-label">NEXT STEP <span>Backend needed</span></div><a class="source-card" href="vault.html"><span class="file-icon pdf">PDF</span><span><b>Connect a document-aware AI</b><small>Then answers can cite files from your vault.</small></span><span class="source-arrow">↗</span></a><div class="answer-note">No document contents were sent or analyzed.</div></div>';
   scroll.append(message); scroll.scrollTop = scroll.scrollHeight;
 }
 form.addEventListener('submit', event => {
@@ -42,4 +42,3 @@ document.querySelector('#newChat').addEventListener('click', () => { clearCurren
 document.querySelector('#deleteChat').addEventListener('click', () => { clearCurrentChat(); showToast('Current chat deleted.'); });
 document.querySelectorAll('[data-feedback]').forEach(button => button.addEventListener('click', () => showToast(`${button.dataset.feedback} feedback noted for this preview.`)));
 document.querySelectorAll('[data-history]').forEach(button => button.addEventListener('click', () => { input.value = button.dataset.history; input.focus(); showToast('Try this example question.'); }));
-document.querySelector('.menu-button').addEventListener('click', () => document.querySelector('.sidebar').classList.toggle('open'));

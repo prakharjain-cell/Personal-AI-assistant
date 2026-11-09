@@ -1,2 +1,0 @@
-/* Dashboard-only refinements; common panels and responsive grid stay in styles.css. */
-.main-content:not(.vault-main):not(.ask-main):not(.tasks-main):not(.settings-main):not(.integrations-main){min-width:0}.documents-panel .empty-state{line-height:1.6}.action-card:focus-visible{outline:3px solid #3d70e455;outline-offset:2px}

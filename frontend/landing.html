@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f6fb">
+  <meta name="description" content="A clear, calm place to organize your documents, find information, and keep everyday tasks in view.">
+  <title>Welcome — Anvaya</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="modern.css">
+  <link rel="stylesheet" href="landing.css">
+</head>
+<body class="landing-body">
+  <main class="landing-page">
+    <header class="landing-header">
+      <a class="brand landing-brand" href="landing.html"><span class="brand-mark"><img class="brand-logo" src="assets/brain-logo.png" alt=""></span><span>Anvaya</span></a>
+      <nav class="landing-nav" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#how-it-works">How it works</a>
+        <a href="vault.html">Vault</a><a href="ask.html">Ask AI</a><a href="tasks.html">Tasks</a>
+        <a class="landing-login" href="signin.html?mode=login">Log in <span>→</span></a>
+      </nav>
+    </header>
+
+    <section class="landing-hero" aria-labelledby="welcomeTitle">
+      <div class="landing-copy">
+        <span class="landing-kicker"><i></i> A MORE ORGANIZED EVERYDAY</span>
+        <h1 id="welcomeTitle">Welcome to<br><span>Anvaya</span></h1>
+        <p>Keep important documents, useful answers, and everyday tasks in one thoughtfully organized workspace.</p>
+        <div class="landing-actions"><a class="landing-cta" href="signin.html?mode=signup">Begin your saving journey <span>→</span></a><a class="landing-secondary" href="signin.html?mode=login">I already have an account</a></div>
+        <small class="landing-reassurance">Start with a simple workspace. Add features as you need them.</small>
+      </div>
+    </section>
+
+    <aside class="landing-privacy-note" aria-label="Your privacy">
+      <span aria-hidden="true">♢</span><div><strong>Your information stays yours.</strong><p>This preview saves only document names, sizes, and Favorites in this browser. It does not upload file contents or save passwords. Real account security and private file storage will be built before real files are stored.</p></div>
+    </aside>
+
+    <section class="landing-about" id="about" aria-labelledby="aboutTitle">
+      <div class="about-heading"><p class="landing-kicker"><i></i> ABOUT ANVAYA</p><h2 id="aboutTitle">Your important things,<br>all in one place.</h2><p>Anvaya brings document organization, document questions, and personal task lists into one simple workspace.</p></div>
+      <div class="about-features">
+        <a href="vault.html"><span>▤</span><div><h3>Organize documents</h3><p>Browse and manage your files in a searchable vault. Upload is a local preview at this stage.</p><b>Explore the Vault <i>→</i></b></div></a>
+        <a href="ask.html"><span>✦</span><div><h3>Ask about your files</h3><p>See how questions about documents could work. AI answers are not connected yet.</p><b>Explore Ask AI <i>→</i></b></div></a>
+        <a href="integrations.html"><span>⌘</span><div><h3>Bring tools together</h3><p>Preview planned connections for Drive, Gmail, and Calendar. Services are not connected.</p><b>Explore Integrations <i>→</i></b></div></a>
+        <a href="tasks.html"><span>☑</span><div><h3>Keep tasks in view</h3><p>Create and manage a to-do list saved in this browser on this device.</p><b>Explore Tasks <i>→</i></b></div></a>
+      </div>
+      <div class="about-actions"><a class="landing-cta" href="signin.html?mode=signup">Get started <span>→</span></a><a class="about-signin" href="signin.html?mode=login">Already have an account? Log in</a></div>
+    </section>
+
+    <section class="landing-process" id="how-it-works" aria-labelledby="processTitle"><div><p class="landing-kicker"><i></i> A SIMPLE PLACE TO BEGIN</p><h2 id="processTitle">Three small steps. Less to keep in your head.</h2></div><ol><li><span>01</span><div><b>Bring your files together</b><p>Use the Vault preview to select files and explore how a document list can be organized.</p></div></li><li><span>02</span><div><b>Find the detail you need</b><p>Search and browse your workspace. Document understanding will come in a later development step.</p></div></li><li><span>03</span><div><b>Keep the day moving</b><p>Use the task list to note the follow-ups you want to remember.</p></div></li></ol></section>
+
+    <section class="landing-note"><span>✦</span><p><b>Built one step at a time.</b> This is an early front-end prototype. Accounts, cloud uploads, AI answers, and external integrations are not connected yet.</p><a href="signin.html?mode=signup">Start exploring <i>→</i></a></section>
+    <footer class="landing-footer"><a class="footer-brand" href="landing.html"><img class="brand-logo" src="assets/brain-logo.png" alt="">Anvaya</a><nav aria-label="Explore pages"><a href="#about">About</a><a href="vault.html">Vault</a><a href="ask.html">Ask AI</a><a href="integrations.html">Integrations</a><a href="tasks.html">Tasks</a><a href="settings.html">Settings</a></nav><a class="footer-start" href="signin.html?mode=signup">Get started →</a><small>© <span id="landingYear"></span></small></footer>
+  </main>
+  <script src="landing.js"></script>
+</body>
+</html>

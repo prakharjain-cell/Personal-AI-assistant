@@ -34,14 +34,21 @@ document.querySelector('#forgotPassword').addEventListener('click', () => {
 authForm.addEventListener('submit', event => {
   event.preventDefault();
   message.textContent = authMode === 'signup'
-    ? 'Sign-up preview only. No account was created and your password was not saved or sent. Opening the dashboard preview…'
-    : 'Login preview only. Your credentials are not checked, saved, or sent. Opening the dashboard preview…';
+    ? 'Sign-up preview only. No account was created and your password was not saved or sent. Opening the workspace preview…'
+    : 'Login preview only. Your credentials are not checked, saved, or sent. Opening the workspace preview…';
   message.classList.add('auth-message-info');
   password.value = '';
   const submitButton = document.querySelector('#authSubmit');
   submitButton.disabled = true;
-  try { sessionStorage.setItem('personal-ai-demo-entry', 'true'); } catch { /* Navigation still works if session storage is unavailable. */ }
-  window.setTimeout(() => { window.location.href = 'dashboard.html'; }, 700);
+  const allowedDestinations = new Set(['dashboard.html', 'vault.html', 'ask.html', 'integrations.html', 'tasks.html', 'settings.html']);
+  const next = new URLSearchParams(window.location.search).get('next');
+  const destination = allowedDestinations.has(next) ? next : 'dashboard.html';
+  try {
+    sessionStorage.setItem('personal-ai-demo-authenticated', 'true');
+    sessionStorage.setItem('personal-ai-demo-entry', 'true');
+  } catch { /* This remains a navigation demo if session storage is unavailable. */ }
+  document.body.classList.add('auth-leaving');
+  window.setTimeout(() => { window.location.href = destination; }, 260);
 });
 const requestedMode = new URLSearchParams(window.location.search).get('mode');
 setMode(requestedMode === 'signup' ? 'signup' : 'login');

@@ -1,0 +1,41 @@
+/* Login/sign-up page only. Shared form colors and layout come from styles.css. */
+.auth-tabs{margin-top:2px}.auth-tab:focus-visible,.auth-submit:focus-visible{outline:3px solid #3c69dc55;outline-offset:2px}.auth-card form>input,.password-field{transition:border-color .15s,box-shadow .15s}.auth-message-status{min-height:34px}.auth-body{transition:opacity .24s ease,transform .24s ease}.auth-body.auth-leaving{opacity:0;transform:translateY(6px)}.auth-submit:disabled{opacity:.75;cursor:wait}
+@media(prefers-reduced-motion:reduce){.auth-body{transition:none}.auth-body.auth-leaving{transform:none}}
+
+/* Keep the desk photo visible across the whole sign-in screen. */
+.auth-body{background:linear-gradient(118deg,rgba(15,70,155,.74),rgba(25,135,184,.54) 55%,rgba(37,155,182,.42)),url("assets/welcome-workspace.png") center/cover fixed no-repeat}
+.auth-layout{background:transparent}
+.auth-intro{background:linear-gradient(145deg,rgba(17,72,160,.72),rgba(26,128,183,.58) 62%,rgba(31,159,174,.5))}
+.auth-side{background:rgba(226,241,255,.68);backdrop-filter:blur(3px)}
+.auth-brand .brand-mark{flex:0 0 38px;overflow:hidden;background:#fff!important;box-shadow:0 5px 16px #0d2a5740}
+.brand-logo{display:block;width:100%;height:100%;object-fit:contain;border-radius:inherit}
+.auth-card-mark{overflow:hidden;background:#fff;border:1px solid #e5ebf4;box-shadow:0 4px 12px #17386918}
+.auth-back{color:#fff;font-size:13px;font-weight:600;text-shadow:0 1px 5px #16386770}
+.auth-back:hover{color:#fff0a4}
+.auth-submit{background:linear-gradient(115deg,#2686e7,#3766dc);box-shadow:0 7px 18px #2162c93b}
+.auth-submit:hover{background:linear-gradient(115deg,#fff,#e7f6fa);color:#165c68}
+@media(max-width:760px){.auth-side{background:rgba(20,87,160,.28);backdrop-filter:none}.auth-back{color:#fff}.auth-footer{color:#f0f7ff}.auth-footer a{color:#fff}.auth-footer a:hover{color:#fff0a4}}
+.auth-brand{color:#fff4b5!important}
+.auth-brand .brand-mark{background:transparent!important;box-shadow:none}
+.auth-brand .brand-logo,.auth-card-mark .brand-logo{mix-blend-mode:multiply}
+.auth-glow .brand-logo{mix-blend-mode:multiply}
+.auth-card-mark{background:transparent;border-color:transparent;box-shadow:none}
+.signup-only:not([hidden]){display:grid;gap:7px;margin:0 0 15px}
+.signup-only label{display:block;font-size:12px;font-weight:600;color:#405674;margin:0}
+.signup-only input{display:block;width:100%;height:43px;padding:0 12px;border:1px solid #cbdcf0;border-radius:8px;background:#f7fbff;color:#19395f;font:14px var(--font);outline:none;transition:border-color .16s,box-shadow .16s}
+.signup-only input:focus,.auth-card form>input:focus,.password-field input:focus{border-color:#62a9e5;box-shadow:0 0 0 3px #7fc6ee35}
+.auth-card form>label{margin:15px 0 7px}
+.auth-submit:hover{background:linear-gradient(115deg,#fff,#e7f6fa);color:#165c68}
+/* Sign-in keeps the photo but uses its own teal and mint palette to distinguish it from Welcome. */
+.auth-body{background:linear-gradient(125deg,rgba(16,83,111,.82),rgba(36,125,145,.68) 55%,rgba(63,133,151,.58)),url("assets/welcome-workspace.png") center/cover fixed no-repeat}
+.auth-intro{background:linear-gradient(145deg,rgba(13,75,105,.82),rgba(28,119,139,.68) 62%,rgba(56,145,144,.62))}
+.auth-side{background:rgba(220,244,242,.76)}
+.auth-brand{color:#fff3b3!important}
+.auth-card{border-color:#cde8e5;box-shadow:0 18px 55px #0e46502a}
+.auth-card>.eyebrow{color:#167c85}
+.auth-submit{background:linear-gradient(115deg,#168e9a,#386bdc);box-shadow:0 7px 18px #1d687b40}
+.auth-submit:hover{background:linear-gradient(115deg,#fff,#e7f6fa);color:#165c68}
+@media(max-width:760px){.auth-side{background:rgba(20,94,116,.28)}}
+.auth-submit{transition:transform .16s cubic-bezier(.2,.8,.2,1),background .16s ease,color .16s ease,box-shadow .16s ease}
+.auth-submit:hover{transform:scale(1.02)}.auth-submit:active{transform:scale(.98)}
+@media(prefers-reduced-motion:reduce){.auth-submit{transition:none}.auth-submit:hover,.auth-submit:active{transform:none}}

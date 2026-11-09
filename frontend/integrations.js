@@ -10,4 +10,3 @@ document.querySelectorAll('.integration-setup').forEach(button => button.addEven
   document.querySelector('#integrationDescription').textContent = integrationInfo[service];
   dialog.showModal();
 }));
-document.querySelector('.menu-button').addEventListener('click', () => document.querySelector('.sidebar').classList.toggle('open'));

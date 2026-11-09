@@ -1,0 +1,3 @@
+/* Dashboard page layout; document-section styling lives in dashboard-documents.css. */
+.main-content:not(.vault-main):not(.ask-main):not(.tasks-main):not(.settings-main):not(.integrations-main){min-width:0}.demo-entry .main-content{animation:dashboard-enter .36s ease-out}@keyframes dashboard-enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.demo-entry .main-content{animation:none}}

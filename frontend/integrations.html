@@ -3,16 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="auth-guard.js"></script>
   <meta name="theme-color" content="#10152e">
-  <title>Integrations — Personal AI Assistant</title>
+  <title>Integrations — Anvaya</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="modern.css">
   <link rel="stylesheet" href="integrations.css">
+  <link rel="stylesheet" href="sidebar.css">
 </head>
 <body>
   <div class="app-shell">
     <aside class="sidebar" aria-label="Main navigation">
-      <a class="brand" href="dashboard.html"><span class="brand-mark">✦</span><span>Personal AI<br>Assistant</span></a>
+      <a class="brand" href="dashboard.html"><span class="brand-mark"><img class="brand-logo" src="assets/brain-logo.png" alt=""></span><span>Anvaya</span></a>
       <nav>
         <a class="nav-link" href="dashboard.html"><span>⌂</span>Home</a>
         <a class="nav-link" href="vault.html"><span>▱</span>Vault</a>
@@ -25,9 +27,10 @@
       <div class="sidebar-foot"><span class="online-dot"></span> Connections are off</div>
     </aside>
     <main class="main-content integrations-main">
-      <header class="topbar"><button class="icon-button menu-button" aria-label="Toggle navigation">☰</button><div class="breadcrumb"><a href="dashboard.html">Workspace</a> <span>/</span> <b>Integrations</b></div><div class="top-actions"><button class="icon-button" aria-label="Notifications">♧</button><a class="avatar" href="settings.html" aria-label="Profile and settings">PJ</a></div></header>
+      <header class="topbar"><button class="icon-button menu-button" aria-label="Collapse sidebar" aria-expanded="true" title="Collapse or open sidebar">☰</button><div class="breadcrumb"><a href="dashboard.html">Workspace</a> <span>/</span> <b>Integrations</b></div><div class="top-actions"><button class="icon-button" aria-label="Notifications">♧</button><a class="avatar" href="settings.html" aria-label="Profile and settings">PJ</a></div></header>
       <section class="integrations-welcome"><div><p class="eyebrow">YOUR CONNECTED WORKSPACE</p><h1>Bring your tools together</h1><p class="muted">Choose which services your assistant can work with.</p></div><span class="not-connected"><i></i> No apps connected</span></section>
       <section class="integration-notice"><span>♢</span><div><b>Connections are not enabled in this preview</b><p>Connecting an account requires a secure sign-in flow and a backend. These cards show how setup will work; they do not access your accounts.</p></div></section>
+      <section class="integration-explainer"><span>⌘</span><div><h2>What is an integration?</h2><p>An integration links an app you choose—such as Drive, Gmail, or Calendar—to your assistant. In a finished version, it could use selected information to help answer questions or create reminders. This preview does not connect to or read any account.</p></div></section>
       <div class="integration-section-heading"><div><h2>Available integrations</h2><p>Connect apps to bring useful information into one place.</p></div><span>3 services</span></div>
       <section class="integration-grid" aria-label="Available integrations">
         <article class="panel integration-card"><div class="integration-card-top"><span class="service-logo drive-logo"><span>▲</span></span><span class="connection-status">Not connected</span></div><h3>Google Drive</h3><p>Find and reference documents stored in your Drive alongside files in your vault.</p><div class="integration-permissions"><span>Possible access</span><b>View selected files</b></div><button class="integration-setup" data-service="Google Drive">Review setup <span>→</span></button></article>
@@ -35,10 +38,11 @@
         <article class="panel integration-card"><div class="integration-card-top"><span class="service-logo calendar-logo">31</span><span class="connection-status">Not connected</span></div><h3>Google Calendar</h3><p>See upcoming events and create reminders from your personal workspace.</p><div class="integration-permissions"><span>Possible access</span><b>View events, create events</b></div><button class="integration-setup" data-service="Google Calendar">Review setup <span>→</span></button></article>
       </section>
       <section class="integration-security"><span class="security-shield">♢</span><div><b>You stay in control</b><p>A real connection should use the provider’s secure sign-in page, request only the access you choose, and let you disconnect whenever you want.</p></div><a href="settings.html">Privacy details →</a></section>
-      <footer class="footer"><span>✦ Personal AI Assistant</span><span>Made to keep your life in order, securely.</span><a class="footer-link" href="settings.html">Privacy &amp; settings</a></footer>
+      <footer class="footer"><span class="footer-brand"><img class="brand-logo" src="assets/brain-logo.png" alt="">Anvaya</span><span>Made to keep your life in order.</span><a class="footer-link" href="settings.html">Privacy &amp; settings</a></footer>
     </main>
     <dialog id="integrationDialog"><form method="dialog" class="integration-dialog"><button class="dialog-close" aria-label="Close">×</button><span class="dialog-kicker">INTEGRATION SETUP PREVIEW</span><h2 id="integrationTitle">Connect a service</h2><p id="integrationDescription"></p><div class="setup-steps"><div><span>1</span><p>Choose the account and review the access requested.</p></div><div><span>2</span><p>Sign in on the provider’s official secure page.</p></div><div><span>3</span><p>Return here and manage or revoke the connection any time.</p></div></div><div class="backend-note">This is a design preview. OAuth sign-in and backend connection are not implemented.</div><div class="dialog-actions"><button class="primary-button" value="close">Got it</button></div></form></dialog>
   </div>
   <script src="integrations.js"></script>
+  <script src="sidebar-control.js"></script>
 </body>
 </html>

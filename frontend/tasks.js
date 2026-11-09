@@ -108,5 +108,4 @@ document.querySelectorAll('.task-filter').forEach(button => button.addEventListe
   document.querySelector('.task-filter.active').classList.remove('active'); button.classList.add('active'); filter = button.dataset.filter; render();
 }));
 searchInput.addEventListener('input', render);
-document.querySelector('.menu-button').addEventListener('click', () => document.querySelector('.sidebar').classList.toggle('open'));
 render();

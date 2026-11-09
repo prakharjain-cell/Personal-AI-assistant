@@ -1,2 +1,0 @@
-/* Ask AI-only chat controls. */
-.delete-chat:focus-visible,.new-chat:focus-visible,.send-chat:focus-visible{outline:3px solid #3d70e455;outline-offset:2px}.chat-empty{animation:chat-in .2s ease-out}@keyframes chat-in{from{opacity:.65;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}

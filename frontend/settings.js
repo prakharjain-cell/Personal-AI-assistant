@@ -42,4 +42,10 @@ document.querySelector('#clearTasks').addEventListener('click', () => {
   localStorage.removeItem('personal-assistant-tasks-v2');
   announce('Saved tasks cleared.');
 });
-document.querySelector('.menu-button').addEventListener('click', () => document.querySelector('.sidebar').classList.toggle('open'));
+document.querySelector('#endDemoSession').addEventListener('click', () => {
+  try {
+    sessionStorage.removeItem('personal-ai-demo-authenticated');
+    sessionStorage.removeItem('personal-ai-demo-entry');
+  } catch { /* Continue to the welcome page even if storage is unavailable. */ }
+  window.location.href = 'landing.html';
+});
